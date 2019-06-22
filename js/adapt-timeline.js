@@ -1,7 +1,8 @@
 define([
     'core/js/adapt',
     'core/js/views/componentView',
-    'core/js/models/componentModel'
+    'core/js/models/componentModel',
+    './timeline'
 ], function(Adapt, ComponentView, ComponentModel) {
 
     var TimelineView = ComponentView.extend({
