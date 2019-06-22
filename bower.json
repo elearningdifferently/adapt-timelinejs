@@ -1,0 +1,16 @@
+{
+  "name": "adapt-timelinejs",
+  "version": "0.0.4",
+  "framework": ">=3.3",
+  "homepage": "https://github.com/elearningdifferently/adapt-timelinejs",
+  "issues": "https://github.com/elearningdifferently/adapt-timelinejs/issues/new",
+  "displayName" : "Timeline",
+  "component" : "timelinejs",
+  "description": "A component that enables anyone to build visually rich, interactive timelines.",
+  "main": "/js/adapt-timeline.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ],
+  "license": "GPLv3"
+}
