@@ -1,8 +1,8 @@
 {
   "name": "adapt-timelinejs",
-  "version": "0.0.12",
+  "version": "0.0.19",
   "framework": ">=3.3",
-  "homepage": "https://github.com/elearningdifferently/adapt-timelinejs",
+  "homepage": "https://github.co8/elearningdifferently/adapt-timelinejs",
   "issues": "https://github.com/elearningdifferently/adapt-timelinejs/issues/new",
   "displayName" : "Timeline",
   "component" : "timelinejs",
