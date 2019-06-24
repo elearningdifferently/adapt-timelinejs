@@ -78,6 +78,15 @@
           "inputType": "Text",
           "validators": [],
           "help": "Caption to be displayed under your media"
+        },
+         "credit": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Media credit",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Media credit or copyright description"
         }
       }
       },
@@ -99,84 +108,106 @@
     "_items": {
       "type": "array",
       "required": false,
-      "title": "Narrative items",
+      "title": "Timline events",
       "items": {
         "type": "object",
         "required": false,
         "properties":{
-          "title": {
+            
+            
+          "event_title": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Event title",
+            "inputType": "Text",
+            "validators": [],
+            "help": "What happened?",
+            "translatable": true
+          },
+            
+          "event_description": {
             "type": "string",
             "required": false,
             "default": "",
-            "title": "Narrative display title",
-            "inputType": "Text",
+            "title": "Event description",
+            "inputType": "TextArea",
             "validators": [],
-            "help": "",
+            "help": "Give some more information about the event",
             "translatable": true
           },
-          "_ariaLevel": {
+            
+          "_event_month": {
             "type": "number",
             "required": true,
             "default": 0,
-            "title": "Narrative title level",
+            "title": "Event Month",
             "inputType": "Number",
             "validators": ["required", "number"],
-            "help": "Aria level for title"
+            "help": "What month it happened?"
           },
-          "body": {
-            "type": "string",
-            "required": false,
-            "default": "",
-            "title": "Narrative main text",
-            "inputType": "TextArea",
-            "validators": [],
-            "help": "",
-            "translatable": true
-          },
-          "_graphic": {
-            "type": "object",
-            "title": "Narrative graphic",
-            "properties":{
-              "src": {
-                "type": "string",
-                "required": true,
-                "default": "",
-                "title": "Select Graphic",
-                "inputType": "Asset:image",
-                "validators": ["required"],
-                "help": ""
-              },
-              "alt": {
-                "type": "string",
-                "required": false,
-                "default": "",
-                "title": "Alternative Text",
-                "inputType": "Text",
-                "validators": [],
-                "help": "Alternative text for this items image",
-                "translatable": true
-              },
-              "attribution": {
-                "type": "string",
-                "required": false,
-                "default": "",
-                "inputType": "Text",
-                "validators": [],
-                "help": "Text to be displayed as an attribution",
-                "translatable": true
-              }
-            }
-          },
-          "strapline": {
-            "type": "string",
+         "_event_day": {
+            "type": "number",
             "required": true,
-            "default": "",
-            "title": "Narrative strapline",
-            "inputType": "Text",
-            "validators": ["required"],
-            "help": "",
-            "translatable": true
-          }
+            "default": 0,
+            "title": "Event Day",
+            "inputType": "Number",
+            "validators": ["required", "number"],
+            "help": "What day it happened?"
+          },
+            
+         "_event_year": {
+            "type": "number",
+            "required": true,
+            "default": 0,
+            "title": "Event Year",
+            "inputType": "Number",
+            "validators": ["required", "number"],
+            "help": "What year it happened?"
+          },
+          "_event_media": {
+              "type": "object",
+              "required": true,
+              "title": "Media",
+              "properties": {
+                "image": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Image",
+                  "inputType": "Asset:image",
+                  "validators": [],
+                  "help": "Upload an image"
+                },
+                "source": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Source URL",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "Enter an external link, such as a YouTube URL"
+                },
+                "caption": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Media caption",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "Caption to be displayed under your media"
+                },
+                 "credit": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Media credit",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "Media credit or copyright description"
+                }
+              }
+              }
         }
       }
     }
