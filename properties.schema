@@ -1,5 +1,5 @@
 {
-  "type":"object",
+  "type": "object",
   "$schema": "http://json-schema.org/draft-04/schema",
   "id": "http://jsonschema.net",
   "$ref": "http://localhost/plugins/content/component/model.schema",
@@ -7,20 +7,13 @@
     "ariaRegion": {
       "type": "string",
       "required": true,
-      "default": "",
+      "default": "Timeline. Select the next button to progress.",
       "inputType": "Text",
       "validators": [],
       "translatable": true
     }
   },
   "properties":{
-    "_supportedLayout": {
-      "type": "string",
-      "required": true,
-      "enum": ["full-width", "half-width", "both"],
-      "default": "both",
-      "editorOnly": true
-    },
     "instruction": {
       "type": "string",
       "required": false,
@@ -29,6 +22,194 @@
       "validators": [],
       "help": "This is the instruction text",
       "translatable": true
+    },
+
+      
+
+      "timelineheadline": {
+      "type": "string",
+      "required": true,
+      "title": "Timeline title",
+      "default": "",
+      "inputType": "Text",
+      "validators": ["required"],
+      "help": "This is your timeline title"
+    },
+    
+    
+      "timelinetext": {
+      "type": "string",
+      "required": false,
+      "title": "Timeline description",
+      "default": "",
+      "inputType": "TextArea",
+      "validators": [],
+      "help": "This is your timeline description, that will appear under the title"
+    },
+      
+      "_media": {
+      "type": "object",
+      "required": true,
+      "title": "Media",
+      "properties": {
+        "image": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Image",
+          "inputType": "Asset:image",
+          "validators": [],
+          "help": "Upload an image"
+        },
+        "source": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Source URL",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Enter an external link, such as a YouTube URL"
+        },
+        "caption": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Media caption",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Caption to be displayed under your media"
+        },
+         "credit": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Media credit",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Media credit or copyright description"
+        }
+      }
+      },
+      
+
+    "_setCompletionOn": {
+      "type": "string",
+      "required": true,
+      "enum": ["inview", "allItems"],
+      "default": "allItems",
+      "title": "Set completion on",
+      "inputType": {
+        "type": "Select",
+        "options": ["inview", "allItems"]
+      },
+      "validators": ["required"],
+      "help": "Whether completion is based on the learner having viewed all the narrative items - or just having viewed the component"
+    },
+    "_items": {
+      "type": "array",
+      "required": false,
+      "title": "Timline events",
+      "items": {
+        "type": "object",
+        "required": false,
+        "properties":{
+            
+            
+          "event_title": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Event title",
+            "inputType": "Text",
+            "validators": [],
+            "help": "What happened?",
+            "translatable": true
+          },
+            
+          "event_description": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Event description",
+            "inputType": "TextArea",
+            "validators": [],
+            "help": "Give some more information about the event",
+            "translatable": true
+          },
+            
+          "_event_month": {
+            "type": "number",
+            "required": true,
+            "default": 0,
+            "title": "Event Month",
+            "inputType": "Number",
+            "validators": ["required", "number"],
+            "help": "What month it happened?"
+          },
+         "_event_day": {
+            "type": "number",
+            "required": true,
+            "default": 0,
+            "title": "Event Day",
+            "inputType": "Number",
+            "validators": ["required", "number"],
+            "help": "What day it happened?"
+          },
+            
+         "_event_year": {
+            "type": "number",
+            "required": true,
+            "default": 0,
+            "title": "Event Year",
+            "inputType": "Number",
+            "validators": ["required", "number"],
+            "help": "What year it happened?"
+          },
+          "_event_media": {
+              "type": "object",
+              "required": true,
+              "title": "Media",
+              "properties": {
+                "image": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Image",
+                  "inputType": "Asset:image",
+                  "validators": [],
+                  "help": "Upload an image"
+                },
+                "source": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Source URL",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "Enter an external link, such as a YouTube URL"
+                },
+                "caption": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Media caption",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "Caption to be displayed under your media"
+                },
+                 "credit": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Media credit",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "Media credit or copyright description"
+                }
+              }
+              }
+        }
+      }
     }
   }
 }
